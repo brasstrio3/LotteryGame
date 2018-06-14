@@ -1,81 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.lotterygame.MainActivity"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context="com.example.administrator.lotterygame.MainActivity">
 
-
-    <ImageView
-        android:id="@+id/pic1"
+    <TextView
+        android:id="@+id/lblWelcome"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="44dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="136dp"
-        app:layout_constraintBottom_toTopOf="@+id/lblMessage"
-        app:layout_constraintEnd_toStartOf="@+id/pic2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/blank" />
-
-    <ImageView
-        android:id="@+id/pic2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="208dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginTop="136dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSpin"
-        app:layout_constraintEnd_toStartOf="@+id/pic3"
-        app:layout_constraintStart_toEndOf="@+id/pic1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/blank" />
-
-    <ImageView
-        android:id="@+id/pic3"
-        android:layout_width="0dp"
-        android:layout_height="73dp"
-        android:layout_marginBottom="45dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/lblMessage"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="16dp"
+        android:text="Welcome to the Lotto Game"
+        app:layout_constraintBottom_toTopOf="@+id/lblMoney"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pic2"
-        app:layout_constraintTop_toBottomOf="@+id/lblCoinCounter"
-        app:srcCompat="@drawable/blank" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblMoney"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginStart="66dp"
+        android:text="How much money would you like to start with?"
+        app:layout_constraintBottom_toTopOf="@+id/txtUserCoins"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblWelcome" />
+
+    <EditText
+        android:id="@+id/txtUserCoins"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="128dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginStart="53dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblMoney"
+        tools:text="Enter an amount less than 100" />
 
     <Button
-        android:id="@+id/btnSpin"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnSubmit"
+        android:layout_width="111dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:text="Spin"
+        android:layout_marginBottom="114dp"
+        android:text="Next Page"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pic2" />
-
-    <TextView
-        android:id="@+id/lblMessage"
-        android:layout_width="175dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="181dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pic1" />
-
-    <TextView
-        android:id="@+id/lblCoinCounter"
-        android:layout_width="96dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="81dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/pic3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUserCoins" />
 </android.support.constraint.ConstraintLayout>
