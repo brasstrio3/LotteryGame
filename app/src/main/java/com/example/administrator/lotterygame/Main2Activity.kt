@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main2.*
+import org.jetbrains.anko.toast
 import java.util.*
 
 
@@ -28,6 +29,7 @@ class Main2Activity : AppCompatActivity() {
         return num
     }
 
+    //TODO: needs to increase/decrease the total coin amount based on the bet the user sets at the bottom
     private fun spin() {
         var counter = (getIntent().getExtras().getInt("Coins"))
         lblCoinCounter.text = ("Coins = " + counter)
@@ -94,7 +96,7 @@ class Main2Activity : AppCompatActivity() {
 
             if (firstPic == secondPic && secondPic == thirdPic && firstPic == thirdPic) {
                 lblMessage.text = "Congrats! You have matched all three pictures and gained 25 coins!"
-                counter += (counter / (counter / 2))
+                counter += 25
                 lblCoinCounter.text = "Coins = " + counter
             }
             else if (firstPic == secondPic || secondPic == thirdPic || firstPic == thirdPic){
@@ -115,16 +117,27 @@ class Main2Activity : AppCompatActivity() {
      */
     private fun setBet() {
         var bet = 0
+        lblBetAmount.text = "Enter bet amount"
         var counter = (getIntent().getExtras().getInt("Coins"))
 
         btnAdd.setOnClickListener {
-            bet += 5
-            lblBetAmount.text = bet.toString()
+            if (bet < counter) {
+                bet += 5
+                lblBetAmount.text = bet.toString()
+            }
+            else {
+                toast("Bet amount cannot exceed the total!")
+            }
         }
 
         btnSubtract.setOnClickListener {
-            bet -= 5
-            lblBetAmount.text = bet.toString()
+            if (bet > 0) {
+                bet -= 5
+                lblBetAmount.text = bet.toString()
+            }
+            else {
+                toast("Bet amount must be greater than 0!")
+            }
         }
 
         btnCustom.setOnClickListener {
