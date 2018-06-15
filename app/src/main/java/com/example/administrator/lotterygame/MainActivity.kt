@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private fun setOnClickListenerForButton() {
         btnSubmit.setOnClickListener {
             if (txtUserCoins.text.toString().equals("")) {
-                toast("Please enter a bet amount")
+                toast("Please enter a starting amount")
             }
             else {
                 val intent = Intent("com.example.administrator.lotterygame.Main2Activity")

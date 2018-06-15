@@ -15,6 +15,7 @@ class Main2Activity : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
         spin()
+        setBet()
         setOnClickListenerForExit()
     }
 
@@ -93,7 +94,7 @@ class Main2Activity : AppCompatActivity() {
 
             if (firstPic == secondPic && secondPic == thirdPic && firstPic == thirdPic) {
                 lblMessage.text = "Congrats! You have matched all three pictures and gained 25 coins!"
-                counter += 25
+                counter += (counter / (counter / 2))
                 lblCoinCounter.text = "Coins = " + counter
             }
             else if (firstPic == secondPic || secondPic == thirdPic || firstPic == thirdPic){
@@ -106,6 +107,33 @@ class Main2Activity : AppCompatActivity() {
                 counter -= 10
                 lblCoinCounter.text = "Coins = " + counter
             }
+        }
+    }
+
+    /*TODO: btnCustom needs to open a numeric textfield and allow user to input custom number.
+        Then it needs to validate that the number entered is not greater than the amount that they have
+     */
+    private fun setBet() {
+        var bet = 0
+        var counter = (getIntent().getExtras().getInt("Coins"))
+
+        btnAdd.setOnClickListener {
+            bet += 5
+            lblBetAmount.text = bet.toString()
+        }
+
+        btnSubtract.setOnClickListener {
+            bet -= 5
+            lblBetAmount.text = bet.toString()
+        }
+
+        btnCustom.setOnClickListener {
+
+        }
+
+        btnAll.setOnClickListener {
+            bet = counter
+            lblBetAmount.text = bet.toString()
         }
     }
 
