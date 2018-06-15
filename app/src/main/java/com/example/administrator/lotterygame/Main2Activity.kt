@@ -1,8 +1,8 @@
 package com.example.administrator.lotterygame
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main2.*
 import java.util.*
@@ -15,6 +15,7 @@ class Main2Activity : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
         spin()
+        setOnClickListenerForExit()
     }
 
     //Generates a random number between 1 and 4. Will be used to display pictures later
@@ -105,6 +106,16 @@ class Main2Activity : AppCompatActivity() {
                 counter -= 10
                 lblCoinCounter.text = "Coins = " + counter
             }
+        }
+    }
+
+    private fun setOnClickListenerForExit() {
+        var counter = (getIntent().getExtras().getInt("Coins"))
+
+        btnExit.setOnClickListener {
+            val intent = Intent("com.example.administrator.lotterygame.Main3Activity")
+            intent.putExtra("Coins", counter)
+            startActivity(intent)
         }
     }
 }

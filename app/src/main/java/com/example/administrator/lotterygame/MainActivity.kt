@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat.startActivity
 import com.example.administrator.lotterygame.R.id.btnSubmit
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main2.*
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,9 +20,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun setOnClickListenerForButton() {
         btnSubmit.setOnClickListener {
-            val intent = Intent("com.example.administrator.lotterygame.Main2Activity")
-            intent.putExtra("Coins", txtUserCoins.text.toString().toInt())
-            startActivity(intent)
+            if (txtUserCoins.text.toString().equals("")) {
+                toast("Please enter a bet amount")
+            }
+            else {
+                val intent = Intent("com.example.administrator.lotterygame.Main2Activity")
+                intent.putExtra("Coins", txtUserCoins.text.toString().toInt())
+                startActivity(intent)
+            }
         }
     }
 }

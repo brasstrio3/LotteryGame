@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,71 +11,71 @@
     <ImageView
         android:id="@+id/pic1"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="44dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="136dp"
-        app:layout_constraintBottom_toTopOf="@+id/lblMessage"
-        app:layout_constraintEnd_toStartOf="@+id/pic2"
+        android:layout_height="75dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintEnd_toStartOf="@+id/pic3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/blank" />
 
     <ImageView
         android:id="@+id/pic2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="208dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginTop="136dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSpin"
+        android:layout_width="90dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintEnd_toStartOf="@+id/pic3"
-        app:layout_constraintStart_toEndOf="@+id/pic1"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/blank" />
 
     <ImageView
         android:id="@+id/pic3"
         android:layout_width="0dp"
-        android:layout_height="73dp"
-        android:layout_marginBottom="45dp"
+        android:layout_height="71dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/lblMessage"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pic2"
+        app:layout_constraintStart_toEndOf="@+id/pic1"
         app:layout_constraintTop_toBottomOf="@+id/lblCoinCounter"
         app:srcCompat="@drawable/blank" />
 
     <Button
         android:id="@+id/btnSpin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_width="237dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="24dp"
         android:text="Spin"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblMessage" />
+
+    <TextView
+        android:id="@+id/lblMessage"
+        android:layout_width="175dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pic2" />
 
     <TextView
-        android:id="@+id/lblMessage"
-        android:layout_width="175dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="181dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/lblCoinCounter"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/pic3"
+        app:layout_constraintStart_toStartOf="@+id/pic3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="End Game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pic1" />
-
-    <TextView
-        android:id="@+id/lblCoinCounter"
-        android:layout_width="96dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="81dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/pic3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSpin" />
 </android.support.constraint.ConstraintLayout>

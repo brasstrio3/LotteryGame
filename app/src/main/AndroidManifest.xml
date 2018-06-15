@@ -23,7 +23,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main3Activity"></activity>
+        <activity android:name=".Main3Activity">
+            <intent-filter>
+                <action android:name="com.example.administrator.lotterygame.Main3Activity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
