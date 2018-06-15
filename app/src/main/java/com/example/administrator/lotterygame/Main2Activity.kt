@@ -2,6 +2,7 @@ package com.example.administrator.lotterygame
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main2.*
 import java.util.*
@@ -26,8 +27,8 @@ class Main2Activity : AppCompatActivity() {
     }
 
     private fun spin() {
-        //TODO: this is the issue
-        var counter = txtUserCoins
+        var counter = (getIntent().getExtras().getInt("Coins"))
+        lblCoinCounter.text = ("Coins = " + counter)
 
         var firstPic: Int = 0
         var secondPic: Int = 0
@@ -92,17 +93,17 @@ class Main2Activity : AppCompatActivity() {
             if (firstPic == secondPic && secondPic == thirdPic && firstPic == thirdPic) {
                 lblMessage.text = "Congrats! You have matched all three pictures and gained 25 coins!"
                 counter += 25
-                //lblCoinCounter.text = "Coins = " + counter
+                lblCoinCounter.text = "Coins = " + counter
             }
             else if (firstPic == secondPic || secondPic == thirdPic || firstPic == thirdPic){
                 lblMessage.text = "Congrats! You have matched two pictures and gained 5 coins!"
-                //counter += 5
-                //lblCoinCounter.text = "Coins = " + counter
+                counter += 5
+                lblCoinCounter.text = "Coins = " + counter
             }
             else {
                 lblMessage.text = "Sorry, you did not match any pictures. Lose 10 coins..."
-                //counter -= 10
-                //lblCoinCounter.text = "Coins = " + counter
+                counter -= 10
+                lblCoinCounter.text = "Coins = " + counter
             }
         }
     }

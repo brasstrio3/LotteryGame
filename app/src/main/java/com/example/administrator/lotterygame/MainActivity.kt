@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private fun setOnClickListenerForButton() {
         btnSubmit.setOnClickListener {
             val intent = Intent("com.example.administrator.lotterygame.Main2Activity")
+            intent.putExtra("Coins", txtUserCoins.text.toString().toInt())
             startActivity(intent)
         }
     }

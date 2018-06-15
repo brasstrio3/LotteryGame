@@ -19,9 +19,11 @@
         <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="com.example.administrator.lotterygame.Main2Activity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".Main3Activity"></activity>
     </application>
 
 </manifest>
